@@ -5,13 +5,11 @@ A newspaper app
 ## Requirements
 
  * Python 3.5
- * PostgreSQL > 9.3
  * Node.JS 6.9.3
  * Yarn > 0.19
 
 ## Features
 - django-allauth
-- djangorestframework
 
 ## Installation
 
