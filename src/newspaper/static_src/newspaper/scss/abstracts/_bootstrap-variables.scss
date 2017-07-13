@@ -1,0 +1,17 @@
+@import '~bootstrap/scss/variables';
+
+// -----------------------------------------------------------------------------
+// This file contains all overwritten bootstrap variables.
+// -----------------------------------------------------------------------------
+
+// Bootstrap variables
+$enable-flex: true;
+$enable-rounded: false;
+
+// Typography
+$font-stack-heading: 'Open Sans', sans-serif;
+$font-stack-default: 'Lato', sans-serif;
+
+// Color palette
+$color-clear: #fff;
+$color-dark: #000;

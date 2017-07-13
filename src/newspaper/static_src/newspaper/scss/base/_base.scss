@@ -1,0 +1,49 @@
+// -----------------------------------------------------------------------------
+// This file contains very basic styles.
+// -----------------------------------------------------------------------------
+
+// Enable the most smooth form of text-rendering cross-browser.
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+// 1. Set up a decent box model on the root element
+// 2. Set a content property value to read out the current breakpoint is JS.
+// 3. Apply breakpoint states to mediaqueries. See also 1.
+html {
+    box-sizing: border-box; // 1
+    -webkit-tap-highlight-color: rgba($color-clear, 0);
+
+    &:after {
+        display: none; // 2
+    }
+
+    @each $state, $val in $grid-breakpoints {
+        @include media-breakpoint-up($state) {
+            &:after {
+                content: '#{$state}'; // 3
+            }
+        }
+    }
+}
+
+// Make all elements from the DOM inherit from the parent box-sizing
+// Since `*` has a specificity of 0, it does not override the `html` value
+// making all elements inheriting from the root box-sizing value
+// See: https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+body {
+    touch-action: manipulation;
+}
+
+// Set SVG's to respect their parents color if relevant
+svg {
+    fill: currentColor;
+    stroke: currentColor;
+}

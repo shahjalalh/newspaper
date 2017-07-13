@@ -1,0 +1,7 @@
+{
+  "extends": "stylelint-config-lukkien",
+  "rules": {
+    "no-browser-hacks": null,
+    "no-eol-whitespace": null
+  }
+}

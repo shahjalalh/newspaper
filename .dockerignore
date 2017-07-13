@@ -1,0 +1,43 @@
+## Always make sure this file is up to date with all
+## files / directories which aren't required by the
+## docker daemon..
+##
+## This will significantly speed up build times.
+
+# Hidden folders
+.cache
+.git
+.idea
+.npm
+.tox
+.vscode
+
+# Other folders
+docs
+node-config
+node_modules
+src
+tests
+webpack
+
+# Hidden files
+.babelrc
+.editorconfig
+.eslintrc
+.gitignore
+.npmrc
+.nvmrc
+.stylelintrc
+.yarnclean
+
+# Other files
+CHANGES.md
+Makefile
+manage.py
+MANIFEST.in
+package.json
+README.md
+setup.cfg
+setup.py
+tox.ini
+yarn.lock

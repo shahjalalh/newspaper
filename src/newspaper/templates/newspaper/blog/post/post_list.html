@@ -1,0 +1,57 @@
+{% extends "newspaper/base.html" %}
+{% load static %}
+
+{% block title %}
+    Welcome to - Daily News
+{% endblock %}
+
+{% block layout %}
+
+    <!-- Blog Entries Column -->
+    <div class="col-md-8">
+
+        <h1 class="my-4">Real News
+            <small>when it happens</small>
+        </h1>
+
+        <!-- Blog Post -->
+        {% for post in object_list %}
+            <div class="card mb-4">
+
+                <div class="card-block">
+                    <h2 class="card-title">{{ post.title }}</h2>
+
+                    <p class="card-text">{{ post.body|truncatechars:120|linebreaks }}</p>
+                    <a href="{{ post.get_absolute_url }}" class="btn btn-primary">Read More &rarr;</a>
+                </div>
+                <div class="card-footer text-muted">
+                    Posted on {{ post.publish }} by {{ post.author }}
+                </div>
+            </div>
+        {% endfor %}
+
+        <!-- Pagination -->
+        {% if is_paginated %}
+            <ul class="pagination justify-content-center mb-4">
+
+                {% if page_obj.has_previous %}
+                    <li class="page-item"><a class="page-link" href="?page={{ page_obj.previous_page_number }}">&larr;
+                        Older</a></li>
+                {% else %}
+                    <li class="page-item disabled"><a class="page-link" href="#">&larr; Older</a></li>
+                {% endif %}
+
+                {% if page_obj.has_next %}
+                    <li class="page-item"><a class="page-link"
+                                             href="?page={{ page_obj.next_page_number }}">Newer &rarr;</a></li>
+                {% else %}
+                    <li class="page-item disabled"><a class="page-link" href="#">Newer &rarr;</a></li>
+                {% endif %}
+
+            </ul>
+        {% endif %}
+
+    </div>
+
+{% endblock %}
+

@@ -1,0 +1,19 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass functions.
+// -----------------------------------------------------------------------------
+
+// Convert a pixel size to a rem-size, i.e:
+//     font-size: calculate-rem(16px);
+@function calculate-rem($size) {
+    $remSize: $size / 16px;
+    @return #{$remSize}rem;
+}
+
+// Photoshop does not apply line height to the first row, which CSS does. This creates all kinds of havock.
+// To calculate the correct offset for the first line we need the font-size and the lineheight, i.e:
+//     margin-top: leading-compensation(22px, 30px);
+@function leading-compensation($font-size, $line-height) {
+    $diff: ($line-height - $font-size) / 2;
+    $negative: -($diff);
+    @return #{$negative};
+}

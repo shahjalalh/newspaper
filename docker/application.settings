@@ -1,0 +1,2 @@
+DJANGO_CONFIGURATION=Development
+DATABASE_URL="sqlite://127.0.0.1/newspaper"

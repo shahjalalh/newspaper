@@ -1,0 +1,43 @@
+@charset 'UTF-8';
+
+// 0. Initialize bootstrap
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~bootstrap/scss/normalize';
+
+// 1. Configuration and helpers
+@import 'abstracts/variables';
+@import 'abstracts/functions';
+@import 'abstracts/mixins';
+
+// 2. Bootstrap base
+@import '~bootstrap/scss/forms';
+@import '~bootstrap/scss/grid';
+@import '~bootstrap/scss/utilities/clearfix';
+@import '~bootstrap/scss/utilities/display';
+@import '~bootstrap/scss/utilities/flex';
+@import '~bootstrap/scss/utilities/visibility';
+
+// 3. Base stuff
+@import 'base/base';
+@import 'base/fonts';
+@import 'base/typography';
+@import 'base/helpers';
+
+// 4. Layout-related sections
+@import 'layout/header';
+@import 'layout/footer';
+
+// 5. Components
+@import 'components/button';
+
+
+body {
+    padding-top: 54px;
+}
+
+@media (min-width: 992px) {
+    body {
+        padding-top: 56px;
+    }
+}

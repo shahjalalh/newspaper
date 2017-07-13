@@ -1,0 +1,77 @@
+{
+  "name": "newspaper",
+  "version": "0.1.0",
+  "description": "A newspaper app",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "config": {
+    "app": "newspaper",
+    "static": {
+      "src": "./src/newspaper/static_src",
+      "dest": "./src/newspaper/static"
+    },
+    "sass": {
+      "includePaths": [
+        "./node_modules/bootstrap/scss"
+      ]
+    }
+  },
+  "scripts": {
+    "build": "npm run build:modernizr & npm run build:webpack",
+    "build:modernizr": "modernizr -c node-config/modernizr.json -d ./src/newspaper/static/newspaper/js",
+    "build:webpack": "babel-node ./node_modules/webpack/bin/webpack.js --optimize-minimize --progress --colors --config webpack/config.build.js",
+    "clean": "rimraf ./src/newspaper/static",
+    "lint:js": "eslint ./src/newspaper/static_src/newspaper/js",
+    "lint:scss": "stylelint ./src/newspaper/static_src/**/*.scss --syntax scss",
+    "lint": "npm run lint:js & npm run lint:scss",
+    "postinstall": "npm run clean && npm run build",
+    "start": "npm run watch",
+    "watch": "babel-node ./node_modules/webpack/bin/webpack.js --progress --colors --config webpack/config.dev.js"
+  },
+  "author": "Shahjalal",
+  "license": "proprietary",
+  "devDependencies": {
+    "babel-eslint": "7.2.3",
+    "browser-sync": "2.18.8",
+    "browser-sync-webpack-plugin": "1.1.4",
+    "eslint": "3.19.0",
+    "eslint-config-airbnb-base": "11.1.3",
+    "eslint-import-resolver-babel-module": "3.0.0",
+    "eslint-loader": "1.7.1",
+    "eslint-plugin-import": "2.2.0",
+    "npm-check": "5.4.0",
+    "stylelint": "7.10.1",
+    "stylelint-config-lukkien": "0.3.0",
+    "stylelint-webpack-plugin": "0.7.0"
+  },
+  "dependencies": {
+    "autoprefixer": "7.0.1",
+    "babel-cli": "6.24.1",
+    "babel-core": "6.24.1",
+    "babel-loader": "7.0.0-beta.1",
+    "babel-plugin-module-resolver": "2.7.0",
+    "babel-polyfill": "6.23.0",
+    "babel-preset-es2015": "6.24.1",
+    "babel-preset-stage-1": "6.24.1",
+    "backbone": "1.3.3",
+    "backbone.radio": "2.0.0",
+    "bootstrap": "4.0.0-alpha.6",
+    "copy-webpack-plugin": "4.0.1",
+    "css-mqpacker": "6.0.0",
+    "extract-text-webpack-plugin": "2.1.0",
+    "jquery": "3.2.1",
+    "lodash": "4.17.4",
+    "modernizr": "3.5.0",
+    "node-sass": "4.5.2",
+    "postcss-flexbugs-fixes": "2.1.1",
+    "postcss-loader": "2.0.1",
+    "raw-loader": "0.5.1",
+    "rimraf": "2.6.1",
+    "sass-loader": "6.0.3",
+    "style-loader": "0.17.0",
+    "throttle-debounce": "1.0.1",
+    "webpack": "2.5.1"
+  }
+}

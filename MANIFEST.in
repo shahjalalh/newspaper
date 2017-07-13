@@ -1,0 +1,8 @@
+include CHANGES.md
+include manage.py
+include package.json
+include README.md
+
+recursive-include src/newspaper/locale *.*
+recursive-include src/newspaper/templates *.*
+recursive-include src/newspaper/static/newspaper *.*
