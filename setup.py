@@ -56,7 +56,7 @@ setup(
     url='https://github.com/',
     install_requires=[
         'dj-database-url==0.4.2',
-        'django==1.11.16',
+        'django>=1.11.28',
         'django-configurations==2.0',
         'django-allauth==0.32.0',
         'django-filter==1.0.2',
